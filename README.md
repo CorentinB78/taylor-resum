@@ -12,7 +12,21 @@ Author: Alex Barnett. 7/30/19.
 
 Let
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" title="f(z) = \sum_{n\ge0}a_n z^n" /></a>
-be a function.
+be a function analytic at the origin, for which the Taylor coefficients
+_a_<sub>0</sub>..._a_<sub>_p_</sub> are given.
+The task is to evaluate _f_ at a target _z_ outside the disc of convergence
+of this Taylor series.
+
+Let
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega\subset\mathbb{R}^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega\subset\mathbb{R}^2" title="\Omega\subset\mathbb{R}^2" /></a>
+be a (possibly unbounded) simply-connected domain containing 0
+in which _f_ is assumed to be analytic.
+
+Let _z_(_w_) be the conformal map taking the unit disc
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;D:=\{w\in\mathbb{C}:&space;\}\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;D:=\{w\in\mathbb{C}:&space;\}\}" title="D:=\{w\in\mathbb{C}: \}\}" /></a>
+to $Omega;
+
+
 
 Applications include: CCQ where Taylor coeffs at origin
 are given by diagrammatic or MC methods.
@@ -44,7 +58,7 @@ ztarg=(3,0): f rel err = -1.94e-06
 
 ### Usage
 
-* `matrixfrominvmap.m` : the main utility which outputs the first _p_-by-_p_ block of the coefficient-mapping matrix _L_, given only a function handle of the map from _w_ to _z_, and a radius _r_.
+* `matrixfrominvmap.m` : the main utility which outputs the first _p_-by-_p_ block of the lower-triangular coefficient-mapping matrix _L_, given only a function handle of the map from _w_ to _z_, and a radius _r_. Called without arguments, a self-test demo is done.
 
 * `resum.m` : the demo which tests the idea for a simple function, allowing different choices of conformal map.
 
