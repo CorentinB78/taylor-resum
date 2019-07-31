@@ -1,5 +1,5 @@
 function [L N] = matrixfrominvmap(invmap,p,r)
-% MATRIXFROMINVMAP.  Use circle sampling method to get low-tri coeff fwd map
+% MATRIXFROMINVMAP.  Use circle sampling method to get lower-tri coeff fwd map
 %
 % L = matrixfrominvmap(invmap,p,r) returns L, a (p+1)-by-(p+1) low-triangular
 %  matrix mapping the vector of p+1 Taylor coeffs of f(z) about 0 in the z-plane
@@ -7,6 +7,8 @@ function [L N] = matrixfrominvmap(invmap,p,r)
 %  Collocation on the circle of radius r in the w-plane is used.
 %
 % [L N] = matrixfrominvmap(invmap,p,r) also returns # colloc pts used.
+%
+% Called without arguments, performs a self-test.
 
 % Barnett 7/3/19
 if nargin==0, test_matrixfrominvmap; return; end
