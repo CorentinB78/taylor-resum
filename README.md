@@ -10,7 +10,8 @@ Author: Alex Barnett. 7/30/19.
 
 ### The task
 
-Let <a href="https://www.codecogs.com/eqnedit.php?latex=f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" title="f(z) = \sum_{n\ge0}a_n z^n" /></a>
+Let
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" title="f(z) = \sum_{n\ge0}a_n z^n" /></a>
 be a function.
 
 Applications include: CCQ where Taylor coeffs at origin
