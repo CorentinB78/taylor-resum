@@ -64,7 +64,7 @@ to &Omega; and 0 to 0.
 See above figure for &Omega; (left plot) and _D_ (right plot).
 By our assumption on _f_,
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\tilde&space;f(w)&space;:=&space;f(z(w))=\sum_{n\ge0}c_nw^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\tilde&space;f(w)&space;:=&space;f(z(w))=\sum_{n\ge0}c_nw^n" title="\tilde f(w) := f(z(w))=\sum_{n\ge0}c_nw^n" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\tilde&space;f(w)&space;:=&space;f(z(w))=\sum_{n\ge0}c_nw^n&space;\hspace{1in}&space;(\ast)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\tilde&space;f(w)&space;:=&space;f(z(w))=\sum_{n\ge0}c_nw^n&space;\hspace{1in}&space;(\ast)" title="\tilde f(w) := f(z(w))=\sum_{n\ge0}c_nw^n \hspace{1in} (\ast)" /></a>
 
 is convergent in _D_.
 It is easy to show that there is a lower-triangular matrix _L_,
@@ -75,7 +75,7 @@ independent of _f_, mapping the coefficients via
 We approximate a finite block of this matrix 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\{L_{mn}\}_{0\le&space;m,n&space;\le&space;p}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\{L_{mn}\}_{0\le&space;m,n&space;\le&space;p}" title="\{L_{mn}\}_{0\le m,n \le p}" /></a>
 using only application of _z_(_w_), by evaluating each monomial
-_z_<sup>_n_<\sup> at the points _z_(_r_ e<sup>2 &pi; _ij/N_</sup>)
+_z_<sup>_n_</sup> at the points _z_(_r_ e<sup>2 &pi; _ij/N_</sup>)
 for _j_=1,...,_N_.
 One must choose a suitable radius _r_ and number of points _N_, and check
 stability with respect to these two parameters (in practice choosing
@@ -83,13 +83,13 @@ _N_ is easy, and it seems there is a range of _r_ that is stable).
 See `matrixfrominvmap.m`.
 
 Finally, given the vector _a_<sub>0</sub>,...,_a_<sub>p</sub>
-we hit it with _L_ to get the _a_ coefficients
-then use them to evaluate the Taylor series for 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\tilde&space;f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\tilde&space;f" title="\tilde f" /></a>
-.
+we hit it with _L_ to get the _c_ coefficients
+then use (*) to evaluate the Taylor series for 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\tilde&space;f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\tilde&space;f" title="\tilde f" /></a> at _w_(_z_), for any desired
+target _z_.
 
 
-### Usage
+### Code usage
 
 * `matrixfrominvmap.m` : the main utility which outputs the first _p_-by-_p_ block of the lower-triangular coefficient-mapping matrix _L_, given only a function handle of the map from _w_ to _z_, and a radius _r_. Called without arguments, a self-test demo is done.
 
