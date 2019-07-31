@@ -3,7 +3,7 @@
 clear; setupsc
 verb=1;    % verbosity: 0 just text, 1 figs, 2 more tests...
 
-f = @(x) log(1+x); fsing = -1;   % func to eval in z-plane, & its sing loc
+f = @(z) log(1+z); fsing = -1;   % func to eval in z-plane, & its sing loc
 p=15;                            % # available coeffs
 fn = [0 -(-1).^(1:p)./(1:p)]';   % data: col vec of Taylor coeffs of f about 0
 if verb>1, x = 0.3; fe = f(x); fa = sum(fn.'.*x.^(0:p));   % check trunc Taylor
@@ -13,7 +13,7 @@ ztarg = 3+0i;                    % desired z target
 ftrue = f(ztarg)                 % true ans, for validation
 
 map = 'p';                       % map type: 'a' RHP parabola, 'p' SC polygon
-                                 % (both work for log(1+x) )
+                                 % (both work for log(1+z) )
 
 if map=='a'  % map right-opening parabola interior to unit disc...
   b = 0.9;   % minus x-intersection of parabola (also scales it, fixing w(0)=0)

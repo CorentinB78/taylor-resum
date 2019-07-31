@@ -27,7 +27,7 @@ function test_matrixfrominvmap
 b1=-0.7; b2=0.3; b3=-0.1; iw = @(w) b1*w+b2*w.^2+b3*w.^3;  % toy inv map p=3
 L4exact = [1 0 0 0;0 b1 0 0; 0 b2 b1^2 0; 0 b3 2*b1*b2 b1^3];
 p = 5;    % max degree of poly to fit in L (>=3)
-rs = [4 2 1 1e-1 1e-2 1e-3];    % w-radius
+rs = [4 2 1 1e-1 1e-2 1e-3];    % w-radius selection
 for i=1:numel(rs), r = rs(i);
   L = matrixfrominvmap(iw,p,r);
   err = norm(L(1:4,1:4) - L4exact);

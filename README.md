@@ -27,6 +27,8 @@ Applications include: quantum systems where Taylor coeffs at origin
 are given by diagrammatic or QMC methods, but there are known singularities
 and branch cuts near by.
 
+![resum_log_demo image](images/log_demo.png)
+
 ### Prerequisites
 
 * MATLAB. Tested with version R2017a.
