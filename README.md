@@ -1,6 +1,6 @@
 # taylor-resum
 
-Numerical tools for resummation of Taylor series via conformal mapping.
+Numerical tool for resummation of a Taylor series via conformal mapping.
 
 Just initial MATLAB experiments for now, including version which uses
 the Schwarz-Christoffel toolbox to handle general polygonal regions.
@@ -15,7 +15,7 @@ Let
 be a function analytic at the origin, for which the Taylor coefficients
 _a_<sub>0</sub>..._a_<sub>_p_</sub> are given.
 Let
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega\subset\mathbb{R}^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega\subset\mathbb{R}^2" title="\Omega\subset\mathbb{R}^2" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega\subset\mathbb{C}\cup\{\infty\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega\subset\mathbb{C}\cup\{\infty\}" title="\Omega\subset\mathbb{C}\cup\{\infty\}" /></a>
 be a (possibly unbounded) simply-connected domain containing 0
 in which _f_ is assumed to be analytic.
 The task is to evaluate _f_ at a target _z_ in &Omega; but which is
@@ -55,7 +55,8 @@ ztarg=(3,0): f rel err = -1.94e-06
 ```
 
 This illustrates 6-digit accuracy in the evaluation of log(1+_z_) at
-_z_=3+0i from _p_=15 terms of the Taylor series at 0.
+_z_=3+0i from _p_=15 terms of the Taylor series at 0, using a map to
+an unbounded polygon.
 
 
 ### The method
@@ -90,6 +91,7 @@ then use (*) to evaluate the Taylor series for
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\tilde&space;f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\tilde&space;f" title="\tilde f" /></a> at _w_(_z_), for any desired
 target _z_.
 
+Note that _L_ involves exponentially large entries.
 
 ### Code usage
 
@@ -112,5 +114,5 @@ It appears _N_ must be at least 3, so that a half-space requires one vertex
 more than one might think.
 
 See the [SC user guide](http://www.math.udel.edu/~driscoll/SC/guide.pdf)
-for examples.
+for polygon examples.
 
