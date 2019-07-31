@@ -23,8 +23,8 @@ be a (possibly unbounded) simply-connected domain containing 0
 in which _f_ is assumed to be analytic.
 
 Let _z_(_w_) be the conformal map taking the unit disc
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;D:=\{w\in\mathbb{C}:&space;\}\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;D:=\{w\in\mathbb{C}:&space;\}\}" title="D:=\{w\in\mathbb{C}: \}\}" /></a>
-to $Omega;
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;D:=\{w\in\mathbb{C}:|w|<1\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;D:=\{w\in\mathbb{C}:|w|<1\}" title="D:=\{w\in\mathbb{C}:|w|<1\}" /></a>
+to &Omega;
 
 
 
