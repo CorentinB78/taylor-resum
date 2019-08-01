@@ -35,7 +35,7 @@ wtarg = w(ztarg);                    % target in w-plane
 r = 0.3; [L Nc] = matrixfrominvmap(iw,p,r);  % r<1 but not too small - how pick?
 
 if verb, figure(2); imagesc(0:p,0:p,log10(abs(L)));   % check L
-  axis equal tight; colorbar; title('coeff matrix: log_{10} L_{mn}');
+  axis equal tight; colorbar; title('coeff matrix: log_{10} |L_{mn}|');
   v=caxis; v(1)=-2; caxis(v); xlabel('n'); ylabel('m');
   r2 = 1.3*r; L2 = matrixfrominvmap(iw,p,r2);   % check stability wrt r
   fprintf('est L rel acc: %.3g\n',norm(L-L2)/norm(L)) % p=10: L acc to 1e-13
