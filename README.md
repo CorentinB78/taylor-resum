@@ -14,22 +14,19 @@ Author: Alex Barnett. 7/31/19
 
 Let
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;f(z)&space;=&space;\sum_{n\ge0}a_n&space;z^n" title="f(z) = \sum_{n\ge0}a_n z^n" /></a>
-be a function analytic at the origin, for which the Taylor coefficients
+be a function analytic at the origin, for which the first Taylor coefficients
 _a_<sub>0</sub>..._a_<sub>_p_</sub> are given.
 Let
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\Omega\subset\mathbb{C}\cup\{\infty\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\Omega\subset\mathbb{C}\cup\{\infty\}" title="\Omega\subset\mathbb{C}\cup\{\infty\}" /></a>
 be a (possibly unbounded) simply-connected domain containing 0
 in which _f_ is assumed to be analytic.
-The task is to evaluate _f_ at a target _z_ in &Omega; but which is
-outside the disc of convergence of this Taylor series.
-Clearly the knowledge that &Omega; includes points outside this disc
-must be used.
+The task is to accurately evaluate such an _f_ at a target _z_ in &Omega; but which lies outside the disc of convergence of this Taylor series.
 
-This is driven by an application of O. Parcollet and collaborators
-(see Bertrand et al arxiv:1903.11646v3).
+This is driven by an application of Olivier Parcollet and collaborators
+at CCQ (see [Bertrand et al arxiv:1903.11646v3](http:arxiv.org/1903.11646)).
 They study quantum systems where Taylor coeffs at origin
-are given by diagrammatic or QMC methods, but there are known singularities
-and branch cuts near by. Their notation uses _U_ instead of _z_.
+are given by diagrammatic or QMC methods, but there are partially known
+singularities and branch cuts near by. Their notation uses _U_ instead of _z_.
 
 
 ### Prerequisites
@@ -102,7 +99,8 @@ then use (*) to evaluate the truncated Taylor series for
 target _z_.
 
 Note that _L_ involves large entries that grow exponentially with _p_,
-as the right-most plot above shows.
+as the right-most plot above shows. This implies extreme sensitivity to
+errors in the given Taylor coefficient data.
 
 
 ### Code usage
