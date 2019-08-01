@@ -97,7 +97,7 @@ See `matrixfrominvmap.m`.
 
 Finally, given the vector _a_<sub>0</sub>,...,_a_<sub>p</sub>
 we hit it with _L_ to get the _c_ coefficients
-then use (*) to evaluate the Taylor series for 
+then use (*) to evaluate the truncated Taylor series for 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\tilde&space;f" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\tilde&space;f" title="\tilde f" /></a> at _w_(_z_), for any desired
 target _z_.
 
@@ -142,3 +142,13 @@ You should be able to graphically draw and edit polygons in SC Toolbox, but I ha
 See the [SC user guide](http://www.math.udel.edu/~driscoll/SC/guide.pdf)
 for polygon examples.
 
+
+### To do
+
+* get feedback
+
+* get GUI polygon editing to work
+
+* try convergence acceleration on the transformed Taylor series
+
+* understand effect of nearest singularities in w-plane, affects design of map (how much should it shield singularities?). Plot the w-plane function.
