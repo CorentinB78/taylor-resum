@@ -1,12 +1,11 @@
 % Simple test Taylor series resummation via conformal map, for Parcollet/CCQ
 % Barnett 7/2/19. Use SCtoolbox 7/29/19.
-clear; setupsc
-verb=1;    % verbosity: 0 just text, 1 figs, 2 more tests...
+clear; setupsc; verb=1;    % verbosity: 0 just text, 1 figs, 2 more tests...
 
 f = @(z) log(1+z); fsing = -1;   % func to eval in z-plane, & its sing loc
 p=15;                            % # available coeffs
-fn = [0 -(-1).^(1:p)./(1:p)]';   % data: col vec of Taylor coeffs of f about 0
-if verb>1, x = 0.3; fe = f(x); fa = sum(fn.'.*x.^(0:p));   % check trunc Taylor
+an = [0 -(-1).^(1:p)./(1:p)]';   % data: col vec of Taylor coeffs of f about 0
+if verb>1, x = 0.3; fe = f(x); fa = sum(an.'.*x.^(0:p));   % check trunc Taylor
   fprintf('rel err in eval at sensible x=%.3g:  %.3g\n',x,(fe-fa)./fe), end
 
 ztarg = 3+0i;                    % desired z target
@@ -44,6 +43,8 @@ end
 
 if verb    % plot both planes, first z then w...
   figure(1); clf; subplot(1,2,1);
+  plot(real(fsing)+[0 -10],imag(fsing)+[0 0],'r*-'); hold on;  % branch cut
+  plot(0,0,'ko'); axis equal; axis(3*[-1 1 -1 1]);
   if map=='a'
     y=-10:0.1:10; x = -1+y.^2/4; z = b*(x+1i*y);   %  unit circ preimage in z
     plot(z,'.-'); hold on; plot([-b 0],[0,2*b],'ko');  % check parabola params
@@ -51,8 +52,6 @@ if verb    % plot both planes, first z then w...
     warning('off','MATLAB:hg:EraseModeIgnored');   % since toolbox is too old
     plot(g); hold on    % overloaded SC map and polygon plot method
   end
-  plot(real(fsing)+[0 -10],imag(fsing)+[0 0],'r*-');  % branch cut
-  plot(0,0,'ko'); axis equal; axis(3*[-1 1 -1 1]);
   plot(real(ztarg),imag(ztarg),'k.'); title('z plane');
   text(real(ztarg),imag(ztarg),'z_{targ}');
   plot(iw(r*exp(2i*pi*(1:Nc)/Nc)),'m.');   % colloc pts used to get L
@@ -65,7 +64,7 @@ if verb    % plot both planes, first z then w...
   plot(r*exp(2i*pi*(1:Nc)/Nc),'m.'); axis tight equal; title('w plane');
 end
 
-c = L*fn;                        % get w-plane Taylor coeffs
-ftarg = sum(c.'.*wtarg.^(0:p))   % do the eval
-e = (ftarg-ftrue)/ftrue;         % validate error
+cn = L*an;                        % get w-plane Taylor coeffs
+ftarg = sum(cn.'.*wtarg.^(0:p))   % do the eval
+e = abs((ftarg-ftrue)/ftrue);     % validate error
 fprintf('ztarg=(%.3g,%.3g): f(ztarg) rel err = %.3g\n',real(ztarg),imag(ztarg),e)
